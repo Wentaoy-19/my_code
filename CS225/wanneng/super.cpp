@@ -8,7 +8,7 @@ using std::endl;
 
 template<class T> T &AList<T>::operator[](int index)
 {
-    return reprarray[index - 1];
+    return reprarray[index];
 }
 
 template<class T> int AList<T>::getlength(void)
@@ -186,6 +186,33 @@ template<class T> bool AList<T>::sublist(AList<T> &list)
     return result;
 }
 
+// Added codes here
+
+template<class T> void AList<T>::bubble_alist()
+{
+    int i,j;
+    T temp;
+    for(i=numitems;i>0;i--)
+    {
+        for(j=0;j<i-1;j++)
+        {
+            if(getitem(j)>getitem(j+1))
+            {
+                temp=getitem(j);
+                setitem(j,getitem(j+1));
+                setitem(j+1,temp);
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+
 //build the max heap using elements in the input array.
 template<class T> void MaxHeap<T>::build_heap(AList<T> &array){
     //put your code below
@@ -268,46 +295,8 @@ template<class T> void MaxHeap<T>::adjust_heap(int position)
 }
 
 int main(){
-    int input_list[3] = {4,3,2};
-    int add_list[2] = {7,8};
-    MaxHeap<int> input_array;
-    for(int i=0;i<3;i++)
-    {
-        input_array.append(input_list[i]);
-    }
-    input_array.insert_k(2,add_list);
+    AList<int> test_array = AList<int>();
+    test_array.append(10);
 
-    for(int j=0;j<5;j++)
-    {
-        cout<<input_array.getitem(j)<<endl;
-    }
-    
-/*
-    cout << "\npart1 test\n";
-    //please feel free to add more test cases
-    int input_list[10] = {5, 3, 9, 46, 15, 22, 91, 8, 29, 77};
-    AList<int> input_array;
-    for (int i=0; i<10; i++){
-        input_array.append(input_list[i]);
-    }
-    cout<< input_array.getitem(1) << endl;
-
-    MaxHeap<int> max_heap;
-    max_heap.build_heap(input_array);
-    cout<< max_heap.max() << "\n\n";
-    max_heap.print_elements();
-
-    cout << "\npart2 test\n";
-    //please feel free to add more test cases
-    int input_list_2[15] = {55, 32, 9, 46, 15, 22, 91, 18, 29, 77, 32, 16, 791, 45, 32};
-    AList<int> input_array_2;
-    for (int i=0; i<15; i++){
-        input_array_2.append(input_list_2[i]);
-    }
-    MaxHeap<int> max_heap_2;
-    max_heap_2.heap_sort(input_array_2);
-    max_heap_2.print_elements();
-    
-    return 0;
-*/
+    cout<<"test"<<endl;
 }

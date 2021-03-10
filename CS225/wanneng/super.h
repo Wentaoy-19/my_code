@@ -20,7 +20,12 @@ public:
     bool member(T value);
     bool equal(AList<T> &list);
     bool sublist(AList<T> &list);
-    
+
+// Added functions here
+
+    void bubble_alist();
+
+
 private:
     int maxsize, minsize;
     int numitems;
