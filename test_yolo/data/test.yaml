@@ -1,8 +1,0 @@
-train: ../Train/images/  
-val: ../Train/images/  
-
-# number of classes
-nc: 1
-
-# class names
-names: ['phone']
