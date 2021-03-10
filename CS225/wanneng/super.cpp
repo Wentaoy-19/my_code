@@ -216,6 +216,7 @@ template<class T> void AList<T>::bubble_alist()
 //build the max heap using elements in the input array.
 template<class T> void MaxHeap<T>::build_heap(AList<T> &array){
     //put your code below
+
 }
 
 //sift down the element with index i within the first num_elements elements.
@@ -294,6 +295,8 @@ template<class T> void MaxHeap<T>::adjust_heap(int position)
 
 }
 
+
+// Here comes the main function
 int main(){
     AList<int> test_array = AList<int>();
     test_array.append(10);
