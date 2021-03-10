@@ -30,7 +30,7 @@ template<class T> stack<T>::stack(int size)
 
 template<class T> T &stack<T>::operator[](int index)
 {
-    return reprarray[index - 1];
+    return reprarray[index];
 }
 
 template<class T> int stack<T>::getheight(void)

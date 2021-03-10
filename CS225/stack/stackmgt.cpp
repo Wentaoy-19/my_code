@@ -11,9 +11,17 @@
 #include "stack.cpp"
 using std::cout;
 using std::cin;
+using std::endl;
 
 int main()
 {
+    stack<int> stack1;
+    stack1.push(10);
+    stack1.push(20);
+    cout<<stack1.getheight()<<endl;
+    cout<<stack1[0]<<endl;    
+
+/*
     int type, size, op;
     // int pos, yes;
     int intitem;
@@ -157,4 +165,5 @@ int main()
     }
     while (op != 0);
     return(0);
+*/
 }
