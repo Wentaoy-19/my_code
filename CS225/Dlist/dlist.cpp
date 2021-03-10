@@ -102,7 +102,7 @@ template<class T> void DList<T>::append(T value)
 
 template<class T> node<T> *DList<T>::locate(int index)
 {
-    if ((index <= 0) || (index > numitems))
+    if ((index < 0) || (index >= numitems))
     {
         cout << "Error: index out of range.\n";
         exit(EXIT_FAILURE);
@@ -111,7 +111,7 @@ template<class T> node<T> *DList<T>::locate(int index)
     {
         node<T> *pt;
         pt = (*dummy).getnext();
-        for (int i = 1; i < index; ++i)
+        for (int i = 0; i < index; ++i)
         {
             pt = (*pt).getnext();
         }

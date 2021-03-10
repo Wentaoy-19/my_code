@@ -11,9 +11,16 @@
 #include "dlist.cpp"
 using std::cout;
 using std::cin;
+using std::endl;
 
 int main()
 {
+    DList<int> test;
+    test.append(10);
+    cout<<test[0]<<endl;
+
+
+/*
     int type, op;
     int pos, yes;
     int intitem, result1;
@@ -310,4 +317,5 @@ int main()
     }
     while (op != 0);
     return(0);
+*/
 }
