@@ -24,6 +24,7 @@ public:
 // Added functions here
 
     void bubble_alist();
+    void swap(int i,int j);
 
 
 private:
@@ -60,9 +61,9 @@ public:
     void insert_k(int k, T arr[]);
     void adjust_heap(int position);
 
-    void build_heap(AList<T> &array);
+    void build_heap(void);
     void sift_down(int i, int num_elements);
-    void heap_sort(AList<T> &array);
+    void heap_sort(void);
     void swap(int i, int j);
     T max();
     void print_elements();

@@ -214,19 +214,49 @@ template<class T> void AList<T>::bubble_alist()
 
 
 //build the max heap using elements in the input array.
-template<class T> void MaxHeap<T>::build_heap(AList<T> &array){
+template<class T> void MaxHeap<T>::build_heap(void){
     //put your code below
+    for(int i=this->getlength()/2-1;i>=0;i--)
+    {
+        sift_down(i,this->getlength());
+    }
 
 }
 
 //sift down the element with index i within the first num_elements elements.
 template<class T> void MaxHeap<T>::sift_down(int i, int num_elements){
     //put your code below
+    int largest = i;
+    if(2*i+1<=num_elements && this->getitem(2*i+1)>this->getitem(i))
+    {
+        this->swap(i,2*i+1);
+        largest = 2*i+1;
+    }
+    if(2*i+2<= num_elements && this->getitem(2*i+2)> this->getitem(i))
+    {
+        this->swap(i,2*i+2);
+        largest=2*i+2;
+    }
+
+    if(largest!=i)
+    {
+        sift_down(largest,num_elements);
+    }
+
+
 }
 
 //sort the input array using max heap.
-template<class T> void MaxHeap<T>::heap_sort(AList<T> &array){
+template<class T> void MaxHeap<T>::heap_sort(void){
     //put your code below
+    build_heap();
+    int total_number = this->getlength()-1;
+    while(total_number >= 0)
+    {
+        swap(0,total_number);
+        total_number-=1;
+        sift_down(0,total_number);
+    }
 }
 
 //swap elements with indices i and j.
@@ -240,6 +270,7 @@ template<class T> void MaxHeap<T>::swap(int i, int j){
 
 //return the root element. 
 template<class T> T MaxHeap<T>::max(){
+    return this->getitem(0);
     //put your code below
 }
 
@@ -247,13 +278,12 @@ template<class T> T MaxHeap<T>::max(){
 template<class T> void MaxHeap<T>::print_elements(){
 
     int n = this->getlength();
-    for (int i=1; i<=n; i++){
+    for (int i=0; i<n; i++){
         cout << this->getitem(i) << "\n";
     }
 
 }
-
-///
+///my codes 
 template<class T> void MaxHeap<T>::insert_k(int k,T arr[])
 {
     int i;
@@ -295,11 +325,24 @@ template<class T> void MaxHeap<T>::adjust_heap(int position)
 
 }
 
+template<class T> void AList<T>::swap(int i,int j)
+{
+    T temp=getitem(i);
+    setitem(i,getitem(j));
+    setitem(j,temp);
+}
+
 
 // Here comes the main function
 int main(){
-    AList<int> test_array = AList<int>();
+    MaxHeap<int> test_array = MaxHeap<int>();
     test_array.append(10);
-
-    cout<<"test"<<endl;
+    test_array.append(5);
+    test_array.append(7);
+    test_array.append(1);
+    test_array.append(12);
+    test_array.append(3);
+    test_array.append(20);
+    test_array.heap_sort();
+    test_array.print_elements();
 }
