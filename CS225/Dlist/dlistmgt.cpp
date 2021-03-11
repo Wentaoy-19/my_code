@@ -15,6 +15,7 @@ using std::endl;
 
 int main()
 {
+
     DList<int> test;
     test.append(10);
     test.append(2);
