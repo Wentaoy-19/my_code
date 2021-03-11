@@ -22,6 +22,7 @@ public:
     void setdata(T item);
     void setnext(node<T> *pt);
     void setprevious(node<T> *pt);
+
 private:
     T dataitem;
     node<T> *pt_next;
@@ -38,12 +39,19 @@ public:
     void setitem(int index, T value);
     T getitem(int index);
     void append(T value);
-    void insert(int index, T value);
+    void insert(int index, T value);    // The inserted element will be assigned in the index
     void remove(int index);
     void concat(DList<T> *dlist);
     bool member(T value);
     bool equal(DList<T> *dlist);
     bool sublist(DList<T> *dlist);
+// my codes 
+    void swap(int i,int j);
+    void bubble_sort(void);   
+    void display(void); 
+
+
+
 private:
     node<T> *dummy;
     int numitems;

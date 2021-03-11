@@ -17,8 +17,17 @@ int main()
 {
     DList<int> test;
     test.append(10);
-    cout<<test[0]<<endl;
+    test.append(2);
+    test.append(5);
+    test.append(7);
+    test.append(1);
+    test.append(90);
 
+    test.display();
+    test.bubble_sort();
+    test.display();
+    test.insert(2,50);
+    test.display();
 
 /*
     int type, op;

@@ -11,6 +11,7 @@
 #include "dlist.h"
 using std::cout;
 using std::cin;
+using std::endl;
 
 template<class T> node<T>::node(T item, node<T> *pt_n, node<T> *pt_p)
 {
@@ -276,4 +277,35 @@ template<class T> bool DList<T>::sublist(DList<T> *dlist)
         
     }
     return result;
+}
+
+template<class T> void DList<T>::swap(int i,int j)
+{
+    T temp = getitem(i);
+    setitem(i,getitem(j));
+    setitem(j,temp);
+}
+
+template<class T> void DList<T>::bubble_sort(void)
+{
+    int i,j;
+    for(i=this->getlength()-1;i>=0;i--)
+    {
+        for(j=0;j<i;j++)
+        {
+            if(getitem(j)>getitem(j+1))
+            {
+                swap(j,j+1);
+            }
+        }
+    }
+}
+
+template<class T> void DList<T>::display(void)
+{
+    for(int i=0;i<this->getlength();i++)
+    {
+        cout<<this->getitem(i)<<" ";
+    }
+    cout<<endl;
 }
