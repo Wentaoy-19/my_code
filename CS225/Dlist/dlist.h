@@ -14,7 +14,7 @@ template<class T> class node
 {
     friend class DList<T>;
 public:
-    node(T item = 0, node<T> *pt_n = 0, node<T> *pt_p = 0);
+    node(node<T> *pt_n = 0, node<T> *pt_p = 0);
 //    virtual ~node(void);
     T getdata(void);
     node<T> *getnext(void);

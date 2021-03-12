@@ -13,9 +13,8 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-template<class T> node<T>::node(T item, node<T> *pt_n, node<T> *pt_p)
+template<class T> node<T>::node(node<T> *pt_n, node<T> *pt_p)
 {
-    dataitem = item;
     pt_next = pt_n;
     pt_previous = pt_p;
 }
