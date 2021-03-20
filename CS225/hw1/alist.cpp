@@ -228,7 +228,7 @@ template<class T> void AList<T>::selection_sort()
 
 template<class T> T &AList<T>::operator[](int index)
 {
-    return reprarray[(start+index) % maxsize];
+   return reprarray[(start+index) % maxsize];
 }
 
 template<class T> int AList<T>::getlength(void)
